@@ -30,11 +30,11 @@ Release/
 *.sln
 !nodemsi.sln
 *.suo
-*.vcproj
-*.vcxproj
-!custom_actions.vcxproj
-*.vcxproj.user
-*.vcxproj.filters
+# *.vcproj
+# *.vcxproj
+# !custom_actions.vcxproj
+# *.vcxproj.user
+# *.vcxproj.filters
 UpgradeLog*.XML
 _UpgradeReport_Files/
 ipch/
