@@ -10,13 +10,13 @@
 *.pyc
 *.scons*
 *.sdf
-*.sln
+# *.sln
 *.so
 *.suo
 *.user
-*.vcproj
-*.vcxproj
-*.vcxproj.filters
+# *.vcproj
+# *.vcxproj
+# *.vcxproj.filters
 *.xcodeproj
 #*#
 *~

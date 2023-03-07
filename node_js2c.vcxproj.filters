@@ -570,10 +570,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="node.gyp"/>
-    <None Include="src\node.js">
-      <Filter>src\_excluded_files</Filter>
-    </None>
+    <None Include="node.gyp" />
     <None Include="lib\_debug_agent.js">
       <Filter>lib\_excluded_files</Filter>
     </None>
@@ -808,5 +805,8 @@
     <None Include="config.gypi">
       <Filter>_excluded_files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\node.js" />
   </ItemGroup>
 </Project>

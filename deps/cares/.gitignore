@@ -8,11 +8,11 @@
 
 /*.opensdf
 /*.sdf
-/*.sln
+# /*.sln
 /*.suo
-/*.vcxproj
-/*.vcxproj.filters
-/*.vcxproj.user
+# /*.vcxproj
+# /*.vcxproj.filters
+# /*.vcxproj.user
 
 *.so
 *.[oa]

@@ -17,22 +17,22 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Locals">
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
-  <ImportGroup Label="ExtensionSettings"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\;$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
     <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
@@ -59,7 +59,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AllowIsolation>true</AllowIsolation>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -101,7 +102,8 @@
       <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <Link>
-      <AdditionalDependencies></AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <AllowIsolation>true</AllowIsolation>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -119,7 +121,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="node.gyp"/>
+    <None Include="node.gyp" />
     <None Include="lib\_debug_agent.js">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </None>
@@ -358,13 +360,14 @@
   <ItemGroup>
     <CustomBuild Include="src\node.js">
       <FileType>Document</FileType>
-      <Command>call call python &quot;tools\js2c.py&quot; &quot;$(OutDir)obj\global_intermediate\node_natives.h&quot; &quot;src\node.js&quot; &quot;lib\_debug_agent.js&quot; &quot;lib\_debugger.js&quot; &quot;lib\_linklist.js&quot; &quot;lib\assert.js&quot; &quot;lib\buffer.js&quot; &quot;lib\child_process.js&quot; &quot;lib\console.js&quot; &quot;lib\constants.js&quot; &quot;lib\crypto.js&quot; &quot;lib\cluster.js&quot; &quot;lib\dgram.js&quot; &quot;lib\dns.js&quot; &quot;lib\domain.js&quot; &quot;lib\events.js&quot; &quot;lib\freelist.js&quot; &quot;lib\fs.js&quot; &quot;lib\nexe.js&quot; &quot;lib\nexeres.js&quot; &quot;lib\http.js&quot; &quot;lib\_http_agent.js&quot; &quot;lib\_http_client.js&quot; &quot;lib\_http_common.js&quot; &quot;lib\_http_incoming.js&quot; &quot;lib\_http_outgoing.js&quot; &quot;lib\_http_server.js&quot; &quot;lib\https.js&quot; &quot;lib\module.js&quot; &quot;lib\net.js&quot; &quot;lib\os.js&quot; &quot;lib\path.js&quot; &quot;lib\process.js&quot; &quot;lib\punycode.js&quot; &quot;lib\querystring.js&quot; &quot;lib\readline.js&quot; &quot;lib\repl.js&quot; &quot;lib\stream.js&quot; &quot;lib\_stream_readable.js&quot; &quot;lib\_stream_writable.js&quot; &quot;lib\_stream_duplex.js&quot; &quot;lib\_stream_transform.js&quot; &quot;lib\_stream_passthrough.js&quot; &quot;lib\_stream_wrap.js&quot; &quot;lib\string_decoder.js&quot; &quot;lib\sys.js&quot; &quot;lib\timers.js&quot; &quot;lib\tls.js&quot; &quot;lib\_tls_common.js&quot; &quot;lib\_tls_legacy.js&quot; &quot;lib\_tls_wrap.js&quot; &quot;lib\tty.js&quot; &quot;lib\url.js&quot; &quot;lib\util.js&quot; &quot;lib\v8.js&quot; &quot;lib\vm.js&quot; &quot;lib\zlib.js&quot; &quot;lib\internal\child_process.js&quot; &quot;lib\internal\cluster.js&quot; &quot;lib\internal\freelist.js&quot; &quot;lib\internal\net.js&quot; &quot;lib\internal\module.js&quot; &quot;lib\internal\socket_list.js&quot; &quot;lib\internal\repl.js&quot; &quot;lib\internal\util.js&quot; &quot;lib\internal\v8_prof_polyfill.js&quot; &quot;lib\internal\v8_prof_processor.js&quot; &quot;lib\internal\streams\lazy_transform.js&quot; &quot;deps\v8\tools\splaytree.js&quot; &quot;deps\v8\tools\codemap.js&quot; &quot;deps\v8\tools\consarray.js&quot; &quot;deps\v8\tools\csvparser.js&quot; &quot;deps\v8\tools\profile.js&quot; &quot;deps\v8\tools\profile_view.js&quot; &quot;deps\v8\tools\logreader.js&quot; &quot;deps\v8\tools\tickprocessor.js&quot; &quot;deps\v8\tools\SourceMap.js&quot; &quot;deps\v8\tools\tickprocessor-driver.js&quot; &quot;config.gypi&quot; &quot;src\nolttng_macros.py&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
+      <Command>call call python "tools\js2c.py" "$(OutDir)obj\global_intermediate\node_natives.h" "src\node.js" "lib\_debug_agent.js" "lib\_debugger.js" "lib\_linklist.js" "lib\assert.js" "lib\buffer.js" "lib\child_process.js" "lib\console.js" "lib\constants.js" "lib\crypto.js" "lib\cluster.js" "lib\dgram.js" "lib\dns.js" "lib\domain.js" "lib\events.js" "lib\freelist.js" "lib\fs.js" "lib\nexe.js" "lib\nexeres.js" "lib\http.js" "lib\_http_agent.js" "lib\_http_client.js" "lib\_http_common.js" "lib\_http_incoming.js" "lib\_http_outgoing.js" "lib\_http_server.js" "lib\https.js" "lib\module.js" "lib\net.js" "lib\os.js" "lib\path.js" "lib\process.js" "lib\punycode.js" "lib\querystring.js" "lib\readline.js" "lib\repl.js" "lib\stream.js" "lib\_stream_readable.js" "lib\_stream_writable.js" "lib\_stream_duplex.js" "lib\_stream_transform.js" "lib\_stream_passthrough.js" "lib\_stream_wrap.js" "lib\string_decoder.js" "lib\sys.js" "lib\timers.js" "lib\tls.js" "lib\_tls_common.js" "lib\_tls_legacy.js" "lib\_tls_wrap.js" "lib\tty.js" "lib\url.js" "lib\util.js" "lib\v8.js" "lib\vm.js" "lib\zlib.js" "lib\internal\child_process.js" "lib\internal\cluster.js" "lib\internal\freelist.js" "lib\internal\net.js" "lib\internal\module.js" "lib\internal\socket_list.js" "lib\internal\repl.js" "lib\internal\util.js" "lib\internal\v8_prof_polyfill.js" "lib\internal\v8_prof_processor.js" "lib\internal\streams\lazy_transform.js" "deps\v8\tools\splaytree.js" "deps\v8\tools\codemap.js" "deps\v8\tools\consarray.js" "deps\v8\tools\csvparser.js" "deps\v8\tools\profile.js" "deps\v8\tools\profile_view.js" "deps\v8\tools\logreader.js" "deps\v8\tools\tickprocessor.js" "deps\v8\tools\SourceMap.js" "deps\v8\tools\tickprocessor-driver.js" "config.gypi" "src\nolttng_macros.py"
+if %errorlevel% neq 0 exit /b %errorlevel%</Command>
       <Message>node_js2c</Message>
       <Outputs>$(OutDir)obj\global_intermediate\node_natives.h</Outputs>
       <AdditionalInputs>lib\_debug_agent.js;lib\_debugger.js;lib\_linklist.js;lib\assert.js;lib\buffer.js;lib\child_process.js;lib\console.js;lib\constants.js;lib\crypto.js;lib\cluster.js;lib\dgram.js;lib\dns.js;lib\domain.js;lib\events.js;lib\freelist.js;lib\fs.js;lib\nexe.js;lib\nexeres.js;lib\http.js;lib\_http_agent.js;lib\_http_client.js;lib\_http_common.js;lib\_http_incoming.js;lib\_http_outgoing.js;lib\_http_server.js;lib\https.js;lib\module.js;lib\net.js;lib\os.js;lib\path.js;lib\process.js;lib\punycode.js;lib\querystring.js;lib\readline.js;lib\repl.js;lib\stream.js;lib\_stream_readable.js;lib\_stream_writable.js;lib\_stream_duplex.js;lib\_stream_transform.js;lib\_stream_passthrough.js;lib\_stream_wrap.js;lib\string_decoder.js;lib\sys.js;lib\timers.js;lib\tls.js;lib\_tls_common.js;lib\_tls_legacy.js;lib\_tls_wrap.js;lib\tty.js;lib\url.js;lib\util.js;lib\v8.js;lib\vm.js;lib\zlib.js;lib\internal\child_process.js;lib\internal\cluster.js;lib\internal\freelist.js;lib\internal\net.js;lib\internal\module.js;lib\internal\socket_list.js;lib\internal\repl.js;lib\internal\util.js;lib\internal\v8_prof_polyfill.js;lib\internal\v8_prof_processor.js;lib\internal\streams\lazy_transform.js;deps\v8\tools\splaytree.js;deps\v8\tools\codemap.js;deps\v8\tools\consarray.js;deps\v8\tools\csvparser.js;deps\v8\tools\profile.js;deps\v8\tools\profile_view.js;deps\v8\tools\logreader.js;deps\v8\tools\tickprocessor.js;deps\v8\tools\SourceMap.js;deps\v8\tools\tickprocessor-driver.js;config.gypi;src\nolttng_macros.py</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
-  <ImportGroup Label="ExtensionTargets"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
