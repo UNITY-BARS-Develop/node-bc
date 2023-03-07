@@ -30,6 +30,11 @@ jobs:
       with:
         python-version: '2.7'
 
+    - name: Chocolatey Action
+      uses: crazy-max/ghaction-chocolatey@v2.1.0
+      with:
+        args: install vcredist2015
+
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:PlatformToolSet="v140" ${{env.SOLUTION_FILE_PATH}}
