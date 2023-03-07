@@ -23,7 +23,7 @@ jobs:
     - name: Chocolatey Action
       uses: crazy-max/ghaction-chocolatey@v2.1.0
       with:
-        args: install visualcppbuildtools
+        args: install vcbuildtools
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
