@@ -1,0 +1,35 @@
+name: MSBuild
+
+on:
+  push:
+    branches: [ "v4-patch" ]
+  pull_request:
+    branches: [ "v4-patch" ]
+
+env:
+  # Path to the solution file relative to the root of the project.
+  SOLUTION_FILE_PATH: node.vcxproj
+  BUILD_CONFIGURATION: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: 'v4-patch'
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+        vs-version: '[14.3]'
+    
+    - name: Setup Python version
+      uses: actions/setup-python@v4
+      with:
+        python-version: '2.7'
+
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
