@@ -20,6 +20,11 @@ jobs:
       with:
         ref: 'v4-patch'
 
+    - name: Chocolatey Action
+      uses: crazy-max/ghaction-chocolatey@v2.1.0
+      with:
+        args: install visualcppbuildtools
+
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
       with:
@@ -29,11 +34,6 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '2.7'
-
-    - name: Chocolatey Action
-      uses: crazy-max/ghaction-chocolatey@v2.1.0
-      with:
-        args: install vcredist2015
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
