@@ -27,7 +27,7 @@ Debug/
 !**/node_modules/debug/
 Release/
 !doc/blog/**
-*.sln
+# *.sln
 !nodemsi.sln
 *.suo
 # *.vcproj
