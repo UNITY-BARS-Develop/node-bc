@@ -22,7 +22,6 @@ jobs:
 
     - name: Configuring build
       uses: ilammy/msvc-dev-cmd@v1
-      working-directory: ${{env.GITHUB_WORKSPACE}}
       with: 
         arch: x86
         sdk: 8.1
