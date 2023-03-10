@@ -26,6 +26,7 @@ jobs:
         arch: x86
         # sdk: 8.1
         # toolset: 14.0
+        vsversion: 14.0
 
     - name: Building NodeJS
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:PlatformToolSet="v140" ${{env.SOLUTION_FILE_PATH}}
