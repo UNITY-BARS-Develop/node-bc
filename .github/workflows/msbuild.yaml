@@ -20,16 +20,17 @@ jobs:
       with:
         ref: 'v4-patch'
 
-    - name: Build
+    - name: Configuring build
       uses: ilammy/msvc-dev-cmd@v1
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: build ${{env.SOLUTION_FILE_PATH}}
       with: 
         arch: x86
         sdk: 8.1
         toolset: 14.11
         vsversion: 2015
-    # ...
+
+    - name: Building NodeJS
+      run: build ${{env.SOLUTION_FILE_PATH}}
 
     # - name: Add MSBuild to PATH
     #   uses: microsoft/setup-msbuild@v1.1
