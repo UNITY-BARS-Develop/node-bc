@@ -24,11 +24,11 @@ jobs:
       uses: suisei-cn/actions-download-file@v1.3.0
       id: downloadfile
       with:
-        url: "https://download.microsoft.com/download/6/A/A/6AA4EDFF-645B-48C5-81CC-ED5963AEAD48/vc_redist.x86.exe"
-        target: vc_redist/
+        url: "https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe"
+        target: toolset/
     
     - name: Install build tools 2015
-      run: vc_redist/vc_redist.x86.exe /install /quite /norestart
+      run: toolset/BuildTools_Full.exe /install /quite /norestart
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
