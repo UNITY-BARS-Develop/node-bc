@@ -20,21 +20,27 @@ jobs:
       with:
         ref: 'v4-patch'
 
-    - name: Chocolatey Action
-      uses: crazy-max/ghaction-chocolatey@v2.1.0
-      with:
-        args: install vcbuildtools
+    - name: Build
+      uses: ilammy/msvc-dev-cmd@v1
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: build ${{env.SOLUTION_FILE_PATH}}
+      with: 
+        arch: x86
+        sdk: 8.1
+        toolset: 14.11
+        vsversion: 2015
+    # ...
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.1
-      with:
-        vs-version: '14.0'
+    # - name: Add MSBuild to PATH
+    #   uses: microsoft/setup-msbuild@v1.1
+    #   with:
+    #     vs-version: '14.0'
     
     - name: Setup Python version
       uses: actions/setup-python@v4
       with:
         python-version: '2.7'
 
-    - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:PlatformToolSet="v140" ${{env.SOLUTION_FILE_PATH}}
+    # - name: Build
+    #   working-directory: ${{env.GITHUB_WORKSPACE}}
+    #   run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:PlatformToolSet="v140" ${{env.SOLUTION_FILE_PATH}}
