@@ -25,7 +25,7 @@ jobs:
       with: 
         arch: x86
         sdk: 8.1
-        toolset: 14.11
+        toolset: 14.0
 
     - name: Building NodeJS
       run: build ${{env.SOLUTION_FILE_PATH}}
