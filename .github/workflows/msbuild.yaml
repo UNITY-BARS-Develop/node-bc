@@ -28,7 +28,7 @@ jobs:
         target: toolset/
     
     - name: Install build tools 2015
-      run: toolset/BuildTools_Full.exe /install /quite /norestart
+      run: toolset/BuildTools_Full.exe /Full /Q /NoRestart
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
