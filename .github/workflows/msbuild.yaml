@@ -20,16 +20,22 @@ jobs:
       with:
         ref: 'v4-patch'
 
-    - name: Download SDK for Windows 8.1
-      uses: suisei-cn/actions-download-file@v1.3.0
-      id: downloadfile
-      with:
-        url: "https://go.microsoft.com/fwlink/p/?LinkId=323507"
-        target: sdk/
-        filename: sdksetup.exe
+    # - name: Download SDK for Windows 8.1
+    #   uses: suisei-cn/actions-download-file@v1.3.0
+    #   id: downloadfile
+    #   with:
+    #     url: "https://go.microsoft.com/fwlink/p/?LinkId=323507"
+    #     target: sdk/
+    #     filename: sdksetup.exe
     
-    - name: Install SDK for Windows 8.1
-      run: sdk/sdksetup.exe /features + /q
+    # - name: Install SDK for Windows 8.1
+    #   run: sdk/sdksetup.exe /features + /q
+
+    - name: Install Windows 8.1 SDK
+      shell: powershell
+      run: |
+        Invoke-WebRequest -Method Get -Uri https://go.microsoft.com/fwlink/p/?LinkId=323507 -OutFile sdksetup.exe -UseBasicParsing
+        Start-Process -Wait sdksetup.exe -ArgumentList "/q", "/norestart", "/features", "OptionId.WindowsDesktopSoftwareDevelopmentKit", "OptionId.NetFxSoftwareDevelopmentKit"
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
