@@ -25,7 +25,8 @@ jobs:
       id: downloadfile
       with:
         url: "https://go.microsoft.com/fwlink/p/?LinkId=323507"
-        target: sdk/sdksetup.exe
+        target: sdk/
+        filename: sdksetup.exe
     
     - name: Install SDK for Windows 8.1
       run: sdk/sdksetup.exe /features + /q
