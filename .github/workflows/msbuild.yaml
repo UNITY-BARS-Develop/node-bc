@@ -13,18 +13,12 @@ env:
 
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v3
       with:
         ref: 'v4-patch'
-    
-    - name: Install build tools 2015
-      shell: powershell
-      run: |
-        Start-Process -Wait "%programfiles(x86)%\Microsoft Visual Studio\Installer\vs_installer.exe" -ArgumentList "modify", "--installPath", "%programfiles(x86)%\Microsoft Visual Studio 2022", "--add", "Microsoft.VisualStudio.Component.VC.140", "-q"
-
 
     - name: Install Windows 8.1 SDK
       shell: powershell
