@@ -23,7 +23,7 @@ jobs:
     - name: Install build tools 2015
       shell: powershell
       run: |
-        Start-Process -Wait "'%programfiles(x86)%\Microsoft Visual Studio\Installer\vs_installer.exe'" -ArgumentList "modify", "--installPath", "'%programfiles(x86)%\Microsoft Visual Studio 2022'", "--add", "Microsoft.VisualStudio.Component.VC.140", "-q"
+        Start-Process -Wait "%programfiles(x86)%\Microsoft Visual Studio\Installer\vs_installer.exe" -ArgumentList "modify", "--installPath", "%programfiles(x86)%\Microsoft Visual Studio 2022", "--add", "Microsoft.VisualStudio.Component.VC.140", "-q"
 
 
     - name: Install Windows 8.1 SDK
