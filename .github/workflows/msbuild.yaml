@@ -13,23 +13,19 @@ env:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v3
       with:
         ref: 'v4-patch'
-
-    # - name: Download SDK for Windows 8.1
-    #   uses: suisei-cn/actions-download-file@v1.3.0
-    #   id: downloadfile
-    #   with:
-    #     url: "https://go.microsoft.com/fwlink/p/?LinkId=323507"
-    #     target: sdk/
-    #     filename: sdksetup.exe
     
-    # - name: Install SDK for Windows 8.1
-    #   run: sdk/sdksetup.exe /features + /q
+    - name: Install build tools 2015
+      shell: powershell
+      run: |
+        Invoke-WebRequest -Method Get -Uri https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe -OutFile BuildTools_Full.exe -UseBasicParsing
+        Start-Process -Wait BuildTools_Full.exe -ArgumentList "/Q", "/NoRestart", "/Full"
+
 
     - name: Install Windows 8.1 SDK
       shell: powershell
@@ -39,8 +35,6 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
-      # with:
-      #   vs-version: '14.0'
     
     - name: Setup Python version
       uses: actions/setup-python@v4
