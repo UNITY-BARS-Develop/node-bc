@@ -23,8 +23,7 @@ jobs:
     - name: Install build tools 2015
       shell: powershell
       run: |
-        Invoke-WebRequest -Method Get -Uri https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe -OutFile BuildTools_Full.exe -UseBasicParsing
-        Start-Process -Wait BuildTools_Full.exe -ArgumentList "/Q", "/NoRestart", "/Full"
+        Start-Process -Wait "'%programfiles(x86)%\Microsoft Visual Studio\Installer\vs_installer.exe'" -ArgumentList "modify", "--installPath", "'%programfiles(x86)%\Microsoft Visual Studio 2022'", "--add", "Microsoft.VisualStudio.Component.VC.140", "-q"
 
 
     - name: Install Windows 8.1 SDK
