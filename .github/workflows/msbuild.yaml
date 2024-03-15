@@ -29,10 +29,10 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
     
-    #- name: Setup Python version
-    #  uses: actions/setup-python@v4
-    #  with:
-    #    python-version: '2.7.18'
+    - name: Setup Python version
+      uses: MatteoH2O1999/setup-python@v3
+      with:
+        python-version: '2.7'
 
     - name: Build NodeJS
       working-directory: ${{env.GITHUB_WORKSPACE}}
